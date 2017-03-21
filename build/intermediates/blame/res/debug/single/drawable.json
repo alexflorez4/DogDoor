@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\fau.png",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\drawable\\fau.png"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_icon.png",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\drawable\\app_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\round_button.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\drawable\\round_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\babybackground.png",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\drawable\\babybackground.png"
+    }
+]

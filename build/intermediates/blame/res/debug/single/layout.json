@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\message.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\layout\\message.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\denied.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\layout\\denied.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_baby_fau.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\layout\\activity_baby_fau.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\granted.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\layout\\granted.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_title.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\layout\\custom_title.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dogrequest.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\layout\\dogrequest.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_name.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\layout\\device_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_list.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\layout\\device_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\baby.xml",
+        "source": "C:\\Users\\alexf\\StudioProjects\\BabySeatProject\\app\\src\\main\\res\\layout\\baby.xml"
+    }
+]

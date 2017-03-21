@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d1e3a4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open door?"
+        android:textColor="#443835"
+        android:textSize="35sp"
+        android:gravity="top"
+        android:id="@+id/textViewOpenDoor"
+        android:layout_marginTop="35sp"
+        android:layout_gravity="center"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/bYes"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Yes"
+        android:textColor="#fff"
+        android:layout_marginTop="45sp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="120sp"/>
+    <Button
+        android:id="@+id/bNo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="No"
+        android:textColor="#fff"
+        android:layout_marginTop="35sp"
+        android:layout_marginLeft="120sp"/>
+
+</LinearLayout>
