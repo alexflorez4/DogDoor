@@ -116,7 +116,8 @@ public class BluetoothService
         setState(STATE_LISTEN);
 
         // Start the thread to listen on a BluetoothServerSocket
-        if (mAcceptThread == null) {
+        if (mAcceptThread == null)
+        {
             mAcceptThread = new AcceptThread();
             mAcceptThread.start();
         }
@@ -239,7 +240,8 @@ public class BluetoothService
      * like a server-side client. It runs until a connection is accepted
      * (or until cancelled).
      */
-    private class AcceptThread extends Thread {
+    private class AcceptThread extends Thread
+    {
         // The local server socket
         private final BluetoothServerSocket mmServerSocket;
 

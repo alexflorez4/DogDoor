@@ -3,6 +3,11 @@ android {
     compileSdkVersion 23
     buildToolsVersion "25.0.2"
 
+    packagingOptions{
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
     defaultConfig {
         applicationId "com.example.android.BluetoothChat"
         minSdkVersion 8
@@ -17,5 +22,9 @@ android {
     }
 }
 
-dependencies {
-}
+dependencies
+        {
+            compile files('libs/httpclient-4.5.3.jar')
+            compile files('libs/httpcore-4.4.6.jar')
+        }
+

@@ -29,6 +29,8 @@ public class DogRequest extends Activity implements View.OnClickListener
         requestview = (TextView) findViewById(R.id.textViewOpenDoor);
         byes = (Button)findViewById(R.id.bYes);
         bno = (Button)findViewById(R.id.bNo);
+        byes.setOnClickListener(this);
+        bno.setOnClickListener(this);
     }
 
     @Override

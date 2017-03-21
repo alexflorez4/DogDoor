@@ -21,7 +21,7 @@ public class AccessDenied extends Activity
             public void run()
             {
                 try{
-                    sleep(1000);
+                    sleep(10000);
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }finally {
@@ -38,5 +38,10 @@ public class AccessDenied extends Activity
         adenied = (TextView) findViewById(R.id.adenied);
     }
 
-
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        finish();
+    }
 }

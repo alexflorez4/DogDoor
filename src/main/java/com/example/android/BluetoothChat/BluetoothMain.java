@@ -122,6 +122,9 @@ public class BluetoothMain extends Activity
         super.onStart();
         if(D) Log.e(TAG, "++ ON START ++");
 
+        Intent dogRequest2 = new Intent("com.example.android.BluetoothChat.DOGREQUEST");
+        startActivity(dogRequest2);
+
         // If BT is not on, request that it be enabled.
         // setupChat() will then be called during onActivityResult
         if (!mBluetoothAdapter.isEnabled())
@@ -193,8 +196,8 @@ public class BluetoothMain extends Activity
     {
         super.onPause();
         if(D) Log.e(TAG, "- ON PAUSE -");
-        mBluetoothAdapter.disable();
-        finish();
+        //mChatService.stop();
+        //finish();
     }
 
     @Override
@@ -359,43 +362,8 @@ public class BluetoothMain extends Activity
                     startActivity(dogRequest2);
 
                     Toast.makeText(getApplicationContext(), "After Intent 2", Toast.LENGTH_SHORT).show();
-                    //mBluetoothAdapter.disable();
+
                 }
-                //else
-                  //  display.setText(message.toString());
-                /*if(message.equals("1"))
-                {
-                	display.setText("Baby on board!");
-                }
-                else
-                {
-                	display.setText("No Baby");
-                }*/
-                
-                
-//                String OK = "";
-//                String FinalMessage = "no";
-//                String FirstLetter = message;
-//                String LastLetter = message;
-//                FirstLetter= FirstLetter.substring(0,1);
-//                LastLetter = LastLetter.substring(LastLetter.length() - 1);
-//                System.out.println("Initial string is: " + LastLetter);
-//
-//                //display.setText(FirstWord);
-//                //Toast.makeText(getApplicationContext(), "I got this" , Toast.LENGTH_SHORT).show();
-//                if(message.equals("[")){	
-//                	FinalMessage.equals("ok");
-//                }
-//                else if (message.equals("]")){
-//                	FinalMessage.equals("no");
-//                	Toast.makeText(getApplicationContext(), FinalMessage , Toast.LENGTH_SHORT).show();
-//                }
-//                
-//                if(FinalMessage.equals("ok")){
-//                	OK += message;
-//                	Toast.makeText(getApplicationContext(), OK , Toast.LENGTH_SHORT).show();
-//                }
-                
                 break;
             case MESSAGE_DEVICE_NAME:
                 // save the connected device's name
