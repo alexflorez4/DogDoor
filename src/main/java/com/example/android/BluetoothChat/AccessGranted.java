@@ -16,10 +16,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.IOException;
 
-
 public class AccessGranted extends Activity
 {
-    private static final String TAG = "DAO ";
+    private static final String TAG = "Access Granted -  ";
 
     TextView access;
     @Override
@@ -28,7 +27,30 @@ public class AccessGranted extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.granted);
         initialize();
-        process();
+    }
+
+    private void initialize()
+    {
+        access = (TextView) findViewById(R.id.agranted);
+        Thread timer = new Thread()
+        {
+            public void run()
+            {
+                try
+                {
+                    sleep(4000);
+                }
+                catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                finally
+                {
+                    process();
+                }
+            }
+        };
+        timer.start();
     }
 
     private void process()
@@ -37,22 +59,22 @@ public class AccessGranted extends Activity
         {
             String url = "http://thugcode.com/embedded/upload.php?command=request&response=1";
             httpGetData(url);
+            Intent intent = new Intent();
+            Bundle messages = new Bundle();
+            messages.putString("message", "1");
+            intent.putExtras(messages);
+            setResult(RESULT_OK, intent);
         }
         catch(Exception e)
         {
             Toast.makeText(getApplicationContext(), "Error sending data. Check connection.", Toast.LENGTH_SHORT).show();
         }
-    finally
+        finally
         {
             Log.e(TAG, "- ON Process Finally -");
             Intent openStartingPoint = new Intent("com.example.android.BluetoothChat.BLUETOOTHMAIN");
             startActivity(openStartingPoint);
         }
-    }
-
-    private void initialize()
-    {
-        access = (TextView) findViewById(R.id.agranted);
     }
 
     @Override
@@ -68,7 +90,6 @@ public class AccessGranted extends Activity
         mURL=mURL.replace(" ", "%20");
 
         HttpClient httpclient = new DefaultHttpClient();
-
         HttpGet httppost = new HttpGet(mURL);
 
         try

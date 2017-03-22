@@ -4,10 +4,24 @@ package com.example.android.BluetoothChat;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import java.io.IOException;
 
 public class AccessDenied extends Activity
 {
+
+    private static final String TAG = "Access Denied -  ";
+
     TextView adenied;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -15,27 +29,54 @@ public class AccessDenied extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.denied);
         initialize();
+    }
 
+    private void initialize()
+    {
+        adenied = (TextView) findViewById(R.id.adenied);
         Thread timer = new Thread()
         {
             public void run()
             {
-                try{
-                    sleep(10000);
-                }catch (InterruptedException e){
+                try
+                {
+                    sleep(4000);
+                }
+                catch (InterruptedException e)
+                {
                     e.printStackTrace();
-                }finally {
-                    Intent openStartingPoint = new Intent("com.example.android.BluetoothChat.BLUETOOTHMAIN");
-                    startActivity(openStartingPoint);
+                }
+                finally
+                {
+                    process();
                 }
             }
         };
         timer.start();
     }
 
-    private void initialize()
+    private void process()
     {
-        adenied = (TextView) findViewById(R.id.adenied);
+        try
+        {
+            String url = "http://thugcode.com/embedded/upload.php?command=request&response=2";
+            httpGetData(url);
+            Intent intent = new Intent();
+            Bundle messages = new Bundle();
+            messages.putString("message", "2");
+            intent.putExtras(messages);
+            setResult(RESULT_OK, intent);
+        }
+        catch(Exception e)
+        {
+            Toast.makeText(getApplicationContext(), "Error sending data. Check connection.", Toast.LENGTH_SHORT).show();
+        }
+        finally
+        {
+            Log.e(TAG, "- ON Process Finally -");
+            Intent openStartingPoint = new Intent("com.example.android.BluetoothChat.BLUETOOTHMAIN");
+            startActivity(openStartingPoint);
+        }
     }
 
     @Override
@@ -43,5 +84,29 @@ public class AccessDenied extends Activity
     {
         super.onPause();
         finish();
+    }
+
+    public String httpGetData(String mURL)
+    {
+        String response="";
+        mURL=mURL.replace(" ", "%20");
+
+        HttpClient httpclient = new DefaultHttpClient();
+        HttpGet httppost = new HttpGet(mURL);
+
+        try
+        {
+            // Execute HTTP Post Request
+            ResponseHandler<String> responseHandler=new BasicResponseHandler();
+            httpclient.execute(httppost,responseHandler);
+        }
+        catch (ClientProtocolException e)
+        {
+            // TODO Auto-generated catch block
+        } catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+        }
+        return response;
     }
 }

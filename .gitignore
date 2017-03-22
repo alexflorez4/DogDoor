@@ -167,3 +167,8 @@ build/intermediates/incremental/mergeDebugResources/compile-file-map.properties
 build/intermediates/manifests/full/debug/AndroidManifest.xml
 build/intermediates/res/resources-debug.ap_
 build/outputs/logs/manifest-merger-debug-report.txt
+build/intermediates/classes/debug/com/example/android/BluetoothChat/AccessGranted$1.class
+build/intermediates/incremental-verifier/debug/com/example/android/BluetoothChat/AccessGranted$1.class
+build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/android/BluetoothChat/AccessGranted$1.class
+build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_8/buildId.txt
+build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_8/com/example/android/BluetoothChat/AccessGranted$1.class

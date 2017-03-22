@@ -383,18 +383,25 @@ public class BluetoothMain extends Activity
 	public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         if(D) Log.d(TAG, "onActivityResult " + resultCode);
-        switch (requestCode) {
+        switch (requestCode)
+        {
         case REQUEST_CONNECT_DEVICE:
             // When DeviceListActivity returns with a device to connect
             if (resultCode == Activity.RESULT_OK)
             {
                 // Get the device MAC address
-                String address = data.getExtras()
-                                     .getString(DeviceListActivity.EXTRA_DEVICE_ADDRESS);
+                String address = data.getExtras().getString(DeviceListActivity.EXTRA_DEVICE_ADDRESS);
                 // Get the BLuetoothDevice object
                 BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(address);
                 // Attempt to connect to the device
                 mChatService.connect(device);
+
+                String message = data.getExtras().getString("message");
+                if(message != null || message.trim().length() > 0 )
+                {
+                    mChatService.write(message.getBytes());
+                    Log.d(TAG, "BYTES SENT!");
+                }
             }
             break;
         case REQUEST_ENABLE_BT:

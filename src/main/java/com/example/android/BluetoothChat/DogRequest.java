@@ -51,4 +51,11 @@ public class DogRequest extends Activity implements View.OnClickListener
         }
 
     }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        finish();
+    }
 }
