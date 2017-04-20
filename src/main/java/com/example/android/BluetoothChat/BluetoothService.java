@@ -315,7 +315,8 @@ public class BluetoothService
      * with a device. It runs straight through; the connection either
      * succeeds or fails.
      */
-    private class ConnectThread extends Thread {
+    private class ConnectThread extends Thread
+    {
         private final BluetoothSocket mmSocket;
         private final BluetoothDevice mmDevice;
 
@@ -394,10 +395,13 @@ public class BluetoothService
             OutputStream tmpOut = null;
 
             // Get the BluetoothSocket input and output streams
-            try {
+            try
+            {
                 tmpIn = socket.getInputStream();
                 tmpOut = socket.getOutputStream();
-            } catch (IOException e) {
+            }
+            catch (IOException e)
+            {
                 Log.e(TAG, "temp sockets not created", e);
             }
 
@@ -421,10 +425,9 @@ public class BluetoothService
                     bytes = mmInStream.read(buffer);
 
                     // Send the obtained bytes to the UI Activity
-                    mHandler.obtainMessage(BluetoothMain.MESSAGE_READ, bytes, -1, buffer)
-                            .sendToTarget();
+                    mHandler.obtainMessage(BluetoothMain.MESSAGE_READ, bytes, -1, buffer).sendToTarget();
                 }
-                catch (IOException e)
+                catch (Exception e)
                 {
                     Log.e(TAG, "disconnected", e);
                     connectionLost();

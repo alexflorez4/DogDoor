@@ -4,35 +4,38 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class Fau_Picture extends Activity{
-
+public class Fau_Picture extends Activity
+{
 	@Override
-	protected void onCreate(Bundle fauPicture) {
-		// TODO Auto-generated method stub
+	protected void onCreate(Bundle fauPicture)
+	{
 		super.onCreate(fauPicture);
 		setContentView(R.layout.activity_baby_fau);
-		Thread timer = new Thread(){
-			
+		Thread timer = new Thread()
+		{
 			@Override
 			public void run(){
-				try{
+				try
+				{
 					sleep(3000);
-				}catch(InterruptedException e){
+				}
+				catch(InterruptedException e)
+				{
 					e.printStackTrace();
-				}finally{
+				}
+				finally
+				{
 					Intent openStartingPoint = new Intent("com.example.android.BluetoothChat.BLUETOOTHMAIN");
 					startActivity(openStartingPoint);
 				}
 			}
 		};
 		timer.start();
-		
 	}
 
 	@Override
 	protected void onPause()
 	{
-		// TODO Auto-generated method stub
 		super.onPause();
 		finish();
 	}

@@ -38,7 +38,7 @@ public class AccessGranted extends Activity
             {
                 try
                 {
-                    sleep(4000);
+                    sleep(3000);
                 }
                 catch (InterruptedException e)
                 {
@@ -47,6 +47,7 @@ public class AccessGranted extends Activity
                 finally
                 {
                     process();
+                    finish();
                 }
             }
         };
@@ -57,23 +58,12 @@ public class AccessGranted extends Activity
     {
         try
         {
-            String url = "http://thugcode.com/embedded/upload.php?command=request&response=1";
+            String url = "http://thugcode.com/embedded/pages/upload.php?command=request&response=1";
             httpGetData(url);
-            Intent intent = new Intent();
-            Bundle messages = new Bundle();
-            messages.putString("message", "1");
-            intent.putExtras(messages);
-            setResult(RESULT_OK, intent);
         }
         catch(Exception e)
         {
             Toast.makeText(getApplicationContext(), "Error sending data. Check connection.", Toast.LENGTH_SHORT).show();
-        }
-        finally
-        {
-            Log.e(TAG, "- ON Process Finally -");
-            Intent openStartingPoint = new Intent("com.example.android.BluetoothChat.BLUETOOTHMAIN");
-            startActivity(openStartingPoint);
         }
     }
 
